@@ -38,6 +38,16 @@ class App extends React.Component {
   };
 
   clear = () => {
+    let state = this.state;
+
+    if(this.timer !== null) {
+      clearInterval(this.timer);
+      this.timer = null;
+    };
+
+    state.number = 0;
+    state.button = 'VAI';
+    this.setState(state);
 
   };
 
